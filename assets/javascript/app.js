@@ -4,11 +4,12 @@ var userChoice
 var questions
 var options
 
-2. create 30 second timer to initiate the game and end game at the end of the timer(use simple timer exercise)
+2. create 30 second timer to initiate the game and end game at the end of the timer(use simple timer exercise). 
+if clock === 0, then answers are submitted;
 
 3. Create a new $(<div>) to hold 8 questions. 
 
-4. Create if/else statements to determine whether questions are right or wrong
+4. Create if/else statements to determine whether questions are right or wrong.
 
 5. create counters to see if answers are correct.
 
@@ -32,19 +33,25 @@ var questions={
     q8: "How many siblings do I have?"
 }
 
-//test//
-console.log(questions.q3);
 
-function setup() {
-    noCanvas()
-    var startTimer = select("#startTimer");
-   $("#startTimer").html(counter);
-    console.log(startTimer);
+var count=30;
 
-    function timeIt() {
-        counter --;
-        startTimer.html(counter);
-    }
-    setTimeout(timeIt, 120000);
- 
+var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     return;
+  }
+
+  document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
 }
+    
+
+
+
+
