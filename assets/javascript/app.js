@@ -21,9 +21,19 @@ var options
 var userChoice;
 var questions;
 var options;
-var initiateTimer; 
+var counter = 120;
 
 
+function setup() {
+    noCanvas()
+    var startTimer = select("#startTimer");
+   $("#startTimer").html(counter);
+    console.log(startTimer);
 
-//lets create the 30 second timer//
-setTimeout(thirtySeconds, 30000);
+    function timeIt() {
+        counter --;
+        startTimer.html(counter);
+    }
+    setTimeout(timeIt, 120000);
+ 
+}
