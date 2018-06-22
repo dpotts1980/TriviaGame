@@ -19,10 +19,21 @@ var options
 
 //lets create our variables//
 var userChoice;
-var questions;
 var options;
 var counter = 120;
+var questions={
+    q1: "what is my favorite color?", 
+    q2: "how old am I?",
+    q3: "Where was the last place I went on vacation?",
+    q4: "Where was I born?",
+    q5: "where will I die?",
+    q6: "what did I eat for breakfast?",
+    q7: "What are my talents?",
+    q8: "How many siblings do I have?"
+}
 
+//test//
+console.log(questions.q3);
 
 function setup() {
     noCanvas()
