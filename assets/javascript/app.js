@@ -21,7 +21,7 @@ if clock === 0, then answers are submitted;
 //lets create our variables//
 var userChoice;
 var options;
-var counter = 120;
+var count = 45;
 var questions={
     q1: "what is my favorite color?", 
     q2: "how old am I?",
@@ -34,10 +34,9 @@ var questions={
 }
 
 
-var count=30;
+
 
 var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-
 function timer()
 {
   count=count-1;
@@ -47,8 +46,7 @@ function timer()
      //counter ended, do something here
      return;
   }
-
-  document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+   document.getElementById("timer").innerHTML=count + " seconds left"; // watch for spelling
 }
     
 
