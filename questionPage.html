@@ -16,12 +16,17 @@
     <!--this is where the timer starts the game-->
  <span id="timer"></span>
     <!--this is the questions-->
-    <form method="post" action="mailto:raizen@mail.utexas.edu?subject=Vocabulary Quiz 1" enctype="text/plain"></form>
-    <P>1. The word which means "house" is:<BR>
-        <input type="radio" name="1.The word which means house is" value="maison">maison<BR>
-        <input type="radio" name="1.The word which means house is" value="quatre">quatre<BR>
-        <input type="radio" name="1.The word which means house is" value="soleil">soleil<BR>
-        <input type="radio" name="1.The word which means house is" value="poisson">poisson<BR>
+    <form id="questions" action="" enctype="text/plain"></form>
+    <P>1. What is the capital of Michigan?<BR>
+          <select id="question-answers">
+            <option value=""></option>
+            <option value="Springfield">Springfield</option>
+            <option value="Detroit">Detroit</option>
+            <option value="Saginaw">Saginaw</option>
+            <option value="Lansing">Lansing</option>
+
+          </select>
+       
     </p>
     <!--remember to check for submit to jquery-->
 <br>

@@ -14,6 +14,8 @@ if clock === 0, then answers are submitted;
 5. create counters to see if answers are correct.
 
 6. create a formula to determine what percentage someone got with conditions above 70% means ok but study up, over 80% is great job, over 90% is excellent
+
+7. use on-click method to determine answers when a user hits submit
 */
 
 
@@ -32,8 +34,6 @@ var questions={
     q7: "What are my talents?",
     q8: "How many siblings do I have?"
 }
-
-
 
 
 var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
