@@ -8,7 +8,7 @@ var options
 if clock === 0, then answers are submitted;
 3. Create a new $(<div>) to hold 8 questions. 
 4. Create if/else statements to determine whether questions are right or wrong.
-5. create counters to see if answers are correct.
+5. create counters for correct and incorrect answers
 6. create a formula to determine what percentage someone got with conditions above 70% means ok but study up, over 80% is great job, over 90% is excellent
 7. use on-click method to determine answers when a user hits submit
 */
@@ -65,7 +65,22 @@ var questionContainer = $(".questionContainer");
 for (var i = 0; i < questions.length; i++) {
 
     var questionDiv = $("<div>" + questions[i] + "</div>");
-
     questionContainer.append(questionDiv);
+    
+    //this is a for loop inside of a for loop//
+     for(var idx = 0; idx < answers.length; idx++){
+        var answerDiv = $("<div>" + answers[idx] + "</div>");
+        questionContainer.append(answerDiv);
+    }
 }
 
+
+
+/*var elements = $();
+for(x = 0; x < 1000; x++) {
+    elements = elements.add('<div>'+x+'</div>');
+    // or 
+    // var element = $('<div>'+x+'</div>');
+    // elements = elements.add(element);
+}
+$('body').append(elements);*/
