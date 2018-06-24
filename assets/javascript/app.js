@@ -19,16 +19,16 @@ if clock === 0, then answers are submitted;
 var userChoice;
 var options;
 var count = 120;
-var questions={
-    q1: "What is the capital of Michigan?", 
-    q2: "What is the capital of Idaho?",
-    q3: "What is the capital of Mississippi?",
-    q4: "What is the capital of Vermont?",
-    q5: "What is the capital of Oregon?",
-    q6: "What is the capital of Texas?",
-    q7: "What is the capital of Illinois?",
-    q8: "What is the capital of Missouri?"
-}
+var questions=[
+    "What is the capital of Michigan?", 
+    "What is the capital of Idaho?",
+    "What is the capital of Mississippi?",
+    "What is the capital of Vermont?",
+    "What is the capital of Oregon?",
+    "What is the capital of Texas?",
+    "What is the capital of Illinois?",
+    "What is the capital of Missouri?"
+]
 
 
 
@@ -47,6 +47,13 @@ function timer(){
 }
     
 
+
 var questionContainer = $(".questionContainer");
-questionContainer.append(questions);
+
+for (var i = 0; i < questions.length; i++) {
+
+    var questionDiv = $("<div>" + questions[i] + "</div>");
+
+    questionContainer.append(questionDiv);
+}
 
