@@ -19,7 +19,7 @@ if clock === 0, then answers are submitted;
 var userChoice;
 var options;
 var count = 120;
-var questions=[
+var questions = [
     "What is the capital of Michigan?", 
     "What is the capital of Idaho?",
     "What is the capital of Mississippi?",
@@ -28,7 +28,19 @@ var questions=[
     "What is the capital of Texas?",
     "What is the capital of Illinois?",
     "What is the capital of Missouri?"
+];
+var answers = [
+["A. Detroit", "B. Saginaw", "C. Ann Arbor", "D. Lansing"], 
+["A. Boise", "B. Lewiston", "C. Twin Falls", "D. Meridian"],
+["A. Tupelo", "B. Biloxi", "C. Jackson", "D. Starkville"],
+["A. Burlington", "B. Montpelier", "C. Manchester", "D. Stowe"],
+["A. Salem", "B. Portland", "C. Bend", "D. Eugene"],
+["A. San Antonio", "B. Austin", "C. Houston", "D. El Paso"],
+["A. Chicago", "B. Springfield", "D. Peoria", "C. Carbondale"],
+["A. St. Louis", "B. Columbia", "C. Kansas City", "D. Jefferson City"]
 ]
+
+console.log(answers);
 
 
 
