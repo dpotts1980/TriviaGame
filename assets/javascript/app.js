@@ -16,9 +16,7 @@ if clock === 0, then answers are submitted;
 
 
 //lets create our variables//
-var userChoice;
-var options;
-var count = 120;
+//var count = 120;
 var questionsArray = [{
     question: "What is the capital of Michigan?",
     answers: ["A. Detroit", "B. Saginaw", "C. Ann Arbor", "D. Lansing"],
@@ -88,13 +86,15 @@ for (var i = 0; i < questionsArray.length; i++) {
     var questionContainer = $("<div class = question>");
     var questionP = $("<p>" + questionsArray[i].question + "</p>");
     var ul = $('<ul>');
-    var questionPack = $('#questionPack');
-    questionPack.append(questionContainer);
+    var questionBox = $('#questionBox');
+   
+
+    questionBox.append(questionContainer);
     for(var j = 0; j < questionsArray[i].answers; j++){
         var li = $('<li class="answer" data-correct="'+ questionsArray[i].correctanswer +'" data-userAnswer="' + j + '">' + questionsArray[i].answers[j] + "</li>");
         ul.append(li)
     }
-    questionContainer.append(ul);
+    questionBox.append(ul);
   }
 }
 
