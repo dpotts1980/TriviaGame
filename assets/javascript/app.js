@@ -60,7 +60,9 @@ var questionsArray = [{
    correctAnswer: 3,
 }];
 
-
+var correctCounter = 0;
+var incorrectCounter = 0;
+var allAnswered = false;
 
 
 /*
@@ -81,7 +83,7 @@ function timer(){
 
 
 
-
+function createQuestions (){
 for (var i = 0; i < questionsArray.length; i++) {
     var questionContainer = $("<div class = question>");
     var questionP = $("<p>" + questionsArray[i].question + "</p>");
@@ -89,12 +91,32 @@ for (var i = 0; i < questionsArray.length; i++) {
     var questionPack = $('#questionPack');
     questionPack.append(questionContainer);
     for(var j = 0; j < questionsArray[i].answers; j++){
-        var li = $('<li class="answer" data-correct="'+ questionArray[i].correctanswer +'" data-userAnswer="' + j + '">' + questionArray[i].answers[j] + "</li>")
+        var li = $('<li class="answer" data-correct="'+ questionsArray[i].correctanswer +'" data-userAnswer="' + j + '">' + questionsArray[i].answers[j] + "</li>");
         ul.append(li)
     }
-    questionContainer.append(questionP);
-  
-    
+    questionContainer.append(ul);
+  }
+}
+
+
+$(document).on("click", ".answer", function(){
+    handleAnswerClick();
+})
+
+function runGame(){
+    createQuestions();
+    timer();
+    endgame();
+}
+
+function handleAnswerClick(){
+    var userguess = $(this).attr('data-userAnswer');
+    var correctguess = $(this).attr('data-correct');
+    if (userguess === correctguess) {
+        correctCounter++
+    } else {
+        incorrectCounter++
+    }
 }
     /*this is a for loop inside of a for loop
      for(var idx = 0; idx < answers.length; idx++){
