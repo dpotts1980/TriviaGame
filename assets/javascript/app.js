@@ -16,7 +16,8 @@ if clock === 0, then answers are submitted;
 
 
 //lets create our variables//
-//var count = 120;
+
+var count = 120
 var questionsArray = [{
     question: "What is the capital of Michigan?",
     answers: ["A. Detroit", "B. Saginaw", "C. Ann Arbor", "D. Lansing"],
@@ -63,7 +64,7 @@ var incorrectCounter = 0;
 var allAnswered = false;
 
 
-/*
+
 var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 function timer(){
   
@@ -77,19 +78,17 @@ function timer(){
   }
    document.getElementById("timer").innerHTML=count + " seconds left"; // watch for spelling
 }
-*/    
+    
 
 
-
+//this is where we'll create our questions//
 function createQuestions (){
 for (var i = 0; i < questionsArray.length; i++) {
-    var questionContainer = $("<div class = question>");
+    var questionWrap = $("<div class = question>");
     var questionP = $("<p>" + questionsArray[i].question + "</p>");
     var ul = $('<ul>');
     var questionBox = $('#questionBox');
-   
-
-    questionBox.append(questionContainer);
+    questionBox.append(questionWrap);
     for(var j = 0; j < questionsArray[i].answers; j++){
         var li = $('<li class="answer" data-correct="'+ questionsArray[i].correctanswer +'" data-userAnswer="' + j + '">' + questionsArray[i].answers[j] + "</li>");
         ul.append(li)
@@ -118,21 +117,5 @@ function handleAnswerClick(){
         incorrectCounter++
     }
 }
-    /*this is a for loop inside of a for loop
-     for(var idx = 0; idx < answers.length; idx++){
-        var answerDiv = $("<div>" + answers[idx] + "</div>");
-    
+  
        
-    }
-}
-
-
-
-/*var elements = $();
-for(x = 0; x < 1000; x++) {
-    elements = elements.add('<div>'+x+'</div>');
-    // or 
-    // var element = $('<div>'+x+'</div>');
-    // elements = elements.add(element);
-}
-$('body').append(elements);*/
