@@ -19,32 +19,51 @@ if clock === 0, then answers are submitted;
 var userChoice;
 var options;
 var count = 120;
-var questions = [
-    "What is the capital of Michigan?", 
-    "What is the capital of Idaho?",
-    "What is the capital of Mississippi?",
-    "What is the capital of Vermont?",
-    "What is the capital of Oregon?",
-    "What is the capital of Texas?",
-    "What is the capital of Illinois?",
-    "What is the capital of Missouri?"
-];
+var questionsArray = [{
+    question: "What is the capital of Michigan?",
+    answers: ["A. Detroit", "B. Saginaw", "C. Ann Arbor", "D. Lansing"],
+    correctAnswer: 3,
+},
+{ 
+    question: "What is the capital of Idaho?",
+    answers: ["A. Boise", "B. Lewiston", "C. Twin Falls", "D. Meridian"],
+    correctAnswer: 0,
+},
+{
+    question: "What is the capital of Mississippi?",
+    answers: ["A. Tupelo", "B. Biloxi", "C. Jackson", "D. Starkville"],
+    correctAnswer: 2,
+},
+{
+    question: "What is the capital of Vermont?",
+    answers: ["A. Burlington", "B. Montpelier", "C. Manchester", "D. Stowe"],
+    correctAnswer: 1,
+},
+{
+    question: "What is the capital of Oregon?",
+    answers: ["A. Salem", "B. Portland", "C. Bend", "D. Eugene"],
+    correctAnswer: 0,
+},
+{
+    question: "What is the capital of Texas?",
+    answers: ["A. San Antonio", "B. Austin", "C. Houston", "D. El Paso"],
+    correctAnswer: 1,
+},
+{
+    question:"What is the capital of Illinois?",
+    answers: ["A. Chicago", "B. Springfield", "D. Peoria", "C. Carbondale"],
+    correctAnswer: 1,
+},
+{
+   question: "What is the capital of Missouri?",
+   answers: ["A. St. Louis", "B. Columbia", "C. Kansas City", "D. Jefferson City"],
+   correctAnswer: 3,
+}];
 
-var answers = [
-["A. Detroit", "B. Saginaw", "C. Ann Arbor", "D. Lansing"], 
-["A. Boise", "B. Lewiston", "C. Twin Falls", "D. Meridian"],
-["A. Tupelo", "B. Biloxi", "C. Jackson", "D. Starkville"],
-["A. Burlington", "B. Montpelier", "C. Manchester", "D. Stowe"],
-["A. Salem", "B. Portland", "C. Bend", "D. Eugene"],
-["A. San Antonio", "B. Austin", "C. Houston", "D. El Paso"],
-["A. Chicago", "B. Springfield", "D. Peoria", "C. Carbondale"],
-["A. St. Louis", "B. Columbia", "C. Kansas City", "D. Jefferson City"]
-]
-
-console.log(answers);
 
 
 
+/*
 var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 function timer(){
   
@@ -58,17 +77,26 @@ function timer(){
   }
    document.getElementById("timer").innerHTML=count + " seconds left"; // watch for spelling
 }
+*/    
+
+
+
+
+for (var i = 0; i < questionsArray.length; i++) {
+    var questionContainer = $("<div class = question>");
+    var questionP = $("<p>" + questionsArray[i].question + "</p>");
+    var ul = $('<ul>');
+    var questionPack = $('#questionPack');
+    questionPack.append(questionContainer);
+    for(var j = 0; j < questionsArray[i].answers; j++){
+        var li = $('<li class="answer" data-correct="'+ questionArray[i].correctanswer +'" data-userAnswer="' + j + '">' + questionArray[i].answers[j] + "</li>")
+        ul.append(li)
+    }
+    questionContainer.append(questionP);
+  
     
-
-
-var questionContainer = $(".questionContainer");
-
-for (var i = 0; i < questions.length; i++) {
-
-    var questionDiv = $("<div>" + questions[i] + "</div>");
-    questionContainer.append(questionDiv);
-    
-    //this is a for loop inside of a for loop//
+}
+    /*this is a for loop inside of a for loop
      for(var idx = 0; idx < answers.length; idx++){
         var answerDiv = $("<div>" + answers[idx] + "</div>");
     
