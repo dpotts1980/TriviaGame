@@ -83,23 +83,28 @@ function timer(){
 
 //this is where we'll create our questions//
 function createQuestions (){
+    console.log('running createQuestions');
 for (var i = 0; i < questionsArray.length; i++) {
     var questionWrap = $("<div class = question>");
     var questionP = $("<p>" + questionsArray[i].question + "</p>");
     var ul = $('<ul>');
     var questionBox = $('#questionBox');
+    questionWrap.append(questionP);
     questionBox.append(questionWrap);
-    for(var j = 0; j < questionsArray[i].answers; j++){
+    for(var j = 0; j < questionsArray[i].answers.length; j++){
         var li = $('<li class="answer" data-correct="'+ questionsArray[i].correctanswer +'" data-userAnswer="' + j + '">' + questionsArray[i].answers[j] + "</li>");
         ul.append(li)
     }
     questionBox.append(ul);
+    
   }
-}
 
+} 
+createQuestions();
 
 $(document).on("click", ".answer", function(){
     handleAnswerClick();
+    
 })
 
 function runGame(){
