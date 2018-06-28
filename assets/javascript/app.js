@@ -97,10 +97,17 @@ function createQuestions (){
     
 for (var i = 0; i < questionsArray.length; i++) {
     var questionWrap = $("<div class = question>");
-    var images = $('<img>' + questionsArray[i].images + '<img.')
+    var images = $('<img>' + questionsArray[i].images + '<img.');//i attempted to create img to correspond to each question but failed to load/
     var questionP = $("<p>" + questionsArray[i].question + "</p>");
     var ul = $('<ul>');
     var questionBox = $('#questionBox');
+    var img = $('<img src="' + questionsArray[i].stateImage + '"' + ' alt="Question">' + questionsArray[i].stateImage.length + '</img>')//this is where it was unable to load the images
+    img.css({
+        "background-image":"url('" + (questionsArray[i].stateImage) + "')",
+        "background-size":"cover"
+        
+    })
+    questionBox.prepend(img);
     questionWrap.append(images);
     questionWrap.append(questionP);
     questionBox.append(questionWrap);
@@ -112,10 +119,15 @@ for (var i = 0; i < questionsArray.length; i++) {
     
     }
     questionBox.append(ul);
-    for(var idx =0; idx < questionsArray[i].stateImage.length; idx++ ) {
-        var img = $('<img src=" " alt="Question">' + questionsArray[i].stateImage.length + '</img>')
-    questionBox.prepend(img);
-    }  
+    // for(var idx =0; idx < questionsArray[i].stateImage.length; idx++ ) {
+    //     var img = $('<img src=" " alt="Question">' + questionsArray[i].stateImage.length + '</img>')//this is where it was unable to load the images
+    //     img.css({
+    //         "background-image":"url('" + (questionsArray[i].stateImage) + "')",
+    //         "background-size":"cover"
+            
+    //     })
+    // questionBox.prepend(img);
+    // }  
   }
 
 } 
@@ -137,11 +149,13 @@ function handleAnswerClick(){
     
     if (userguess === correctguess) {
         correctCounter++;
-        $()
+        $('#correctAnswer').text(correctCounter);//I've been able to log the correct and incorrect questions but unable to have the counter work
         
     } else {
         incorrectCounter++
-   
+        $('#correctAnswer').text(correctCounter);
+    
+        
     
     }
     
